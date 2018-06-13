@@ -1,0 +1,54 @@
+textarea,
+input,
+button {
+  outline: none;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 4-18 */
+
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 19+ */
+
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+/* IE 10+ */
+
+textarea:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+textarea:focus:-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 4-18 */
+
+textarea:focus::-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 19+ */
+
+textarea:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+input[type="text"], input[type="text"]:focus{
+  outline: 0;
+  border:none;
+  box-shadow:none;
+
+}

@@ -1,0 +1,60 @@
+//color
+$green: #5ac14c;
+$grey: #f5f5f7;
+$white: #fff;
+$greysoft: #f8f9fb;
+$greymid: #d7e0e7;
+$greydark: #9298a4;
+$greydarkX: #585b5e;
+$border: #f1f0f5;
+$bluedark: #35649a;
+$bluemid: #34bcf8;
+$greyspec: #ceced0;
+$red: #e45654;
+
+//dimension
+$mobile: "(max-width:767px)"; //xs
+$tablet: "(min-width:768px) and (max-width:991px)"; //sm
+$mdesktop: "(min-width:992px) and (max-width:1199px)"; //md 
+$ldesktop: "(min-width:1200px)"; //lg
+$spec: "(min-width:768px)";
+$object: "(max-width:991px)";
+$copy: "(max-width:1175px)";
+
+//font
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat-Medium.ttf');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../font/Montserrat-SemiBold.ttf');
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media #{$mobile} {
+}
+
+@media #{$tablet} {
+}
+
+@media #{$mdesktop} {
+}
+
+@media #{$ldesktop} {
+}

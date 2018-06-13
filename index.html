@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pronet_task</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <svg aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <symbol id="icon-logo" viewbox="0 0 32 32">
+                <path d="M16.087 32h-16.087l8.044-16.087 8.044-15.913 8.044 15.913 8.219 16.087z"></path>
+            </symbol>
+            <symbol id="icon-magnifier" viewbox="0 0 32 32">
+                <path d="M21.677 18.787l-0.826 0.826-1.239-1.445c3.51-4.335 3.51-10.735-0.619-14.865-2.065-2.065-4.955-3.303-7.845-3.303s-5.781 1.239-7.845 3.303c-4.335 4.335-4.335 11.355 0 15.69 2.065 2.065 4.955 3.303 7.845 3.303 2.684 0 5.161-1.032 7.019-2.684l1.445 1.445-0.826 0.826 10.323 10.323 3.097-3.097-10.529-10.323zM4.748 17.548c-3.51-3.51-3.51-9.29 0-12.8 1.652-1.652 3.923-2.684 6.4-2.684s4.748 1.032 6.4 2.684c3.51 3.51 3.51 9.29 0 12.8-1.858 1.652-4.129 2.477-6.4 2.477s-4.748-0.826-6.4-2.477z"></path>
+            </symbol>
+            <symbol id="icon-message" viewbox="0 0 41 32">
+                <path d="M12.936 0v24.057h14.298v6.582l4.993-6.582h9.078v-24.057h-28.369zM21.56 15.66c-1.589 0-2.723-1.135-2.723-2.723s1.135-2.723 2.723-2.723c1.589 0 2.723 1.135 2.723 2.723s-1.135 2.723-2.723 2.723zM32.454 15.66c-1.589 0-2.723-1.135-2.723-2.723s1.135-2.723 2.723-2.723c1.589 0 2.723 1.135 2.723 2.723s-1.135 2.723-2.723 2.723z"></path>
+                <path d="M11.574 4.312h-11.574v24.738h10.44l3.177 2.95v-2.95h12.028v-3.177h-14.071z"></path>
+            </symbol>
+            <symbol id="icon-account" viewbox="0 0 27 32">
+                <path d="M26.549 28.835c-1.758-5.626-9.846-6.857-9.846-6.857s-0.703-2.462 0-4.044c0.703-1.582 3.692-4.747 3.868-10.549 0-5.978-6.154-7.385-6.154-7.385h-2.286c0 0-6.33 1.407-6.154 7.385 0.176 5.802 3.165 8.967 3.868 10.549s0 4.044 0 4.044-8.088 1.407-9.846 6.857c-0.879 3.516 12.132 3.165 12.132 3.165h2.11c0.176 0 13.187 0.527 12.308-3.165z"></path>
+            </symbol>
+            <symbol id="icon-notification" viewbox="0 0 23 32">
+                <path d="M11.728 3.518c0 0 2.346 0.168 2.848-0.67s-1.508-2.848-2.848-2.848-3.351 2.178-2.848 3.016c0.503 0.838 2.848 0.503 2.848 0.503z"></path>
+                <path d="M11.728 4.524c-3.351 0-10.555 6.534-11.728 17.927-0.335 4.691 11.728 4.691 11.728 4.691s12.063 0 11.728-4.691c-1.173-11.56-8.544-17.927-11.728-17.927z"></path>
+                <path d="M15.916 27.812c-2.010 0.67-4.188 0.67-4.188 0.67s-2.178 0-4.356-0.67c-0.838 0 1.34 4.356 4.356 4.188 3.016 0.168 5.194-4.188 4.188-4.188z"></path>
+            </symbol>
+            <symbol id="icon-checkmark" viewbox="0 0 32 32">
+                <path d="M27 4l-15 15-7-7-5 5 12 12 20-20z"></path>
+            </symbol>
+            <symbol id="icon-arrow-left" viewbox="0 0 32 32">
+                <path d="M12.586 27.414l-10-10c-0.781-0.781-0.781-2.047 0-2.828l10-10c0.781-0.781 2.047-0.781 2.828 0s0.781 2.047 0 2.828l-6.586 6.586h19.172c1.105 0 2 0.895 2 2s-0.895 2-2 2h-19.172l6.586 6.586c0.39 0.39 0.586 0.902 0.586 1.414s-0.195 1.024-0.586 1.414c-0.781 0.781-2.047 0.781-2.828 0z"></path>
+            </symbol>
+            <symbol id="icon-home" viewbox="0 0 27 32">
+                <path d="M13.139 0l-13.139 12.291 4.874 19.709h16.53l4.874-19.709-13.139-12.291zM19.921 29.881h-13.351l-4.238-16.742 10.808-10.172 10.808 10.172-4.026 16.742z"></path>
+                <path d="M9.748 24.583h6.993v-9.536h-6.993v9.536zM11.868 17.166h2.755v5.298h-2.755v-5.298z"></path>
+            </symbol>
+            <symbol id="icon-star" viewbox="0 0 33 32">
+                <path d="M16.842 4.842l3.368 6.737 0.421 1.053h1.053l7.368 1.053-6.105 6.105 0.211 0.842 1.263 7.368-6.526-3.368-1.053-0.632-1.053 0.421-6.526 3.368 1.263-7.158 0.211-1.053-0.842-0.632-5.474-5.263 7.579-1.053 1.053-0.211 0.421-1.053 3.368-6.526zM16.842 0l-5.263 10.526-11.579 1.684 8.421 8.211-2.105 11.579 10.526-5.474 10.316 5.474-1.895-11.579 8.421-8.211-11.789-1.684-5.053-10.526z"></path>
+            </symbol>
+            <symbol id="icon-doc" viewbox="0 0 27 32">
+                <path d="M27.191 0h-21.272v4.439h-5.919v27.376h14.428l6.844-6.104h5.919v-25.711zM1.85 6.289h17.572v18.127h-6.104v5.734h-11.468v-23.861zM17.942 26.266l-2.775 2.59v-2.59h2.775zM25.341 23.861h-4.069v-19.422h-13.503v-2.59h17.572v22.012z"></path>
+                <path d="M6.844 12.948h8.694v1.85h-8.694v-1.85z"></path>
+                <path d="M6.844 18.682h4.439v1.85h-4.439v-1.85z"></path>
+            </symbol>
+            <symbol id="icon-prof" viewbox="0 0 29 32">
+                <path d="M27.139 30.177c1.013-1.823 1.62-3.848 1.62-5.873 0-5.468-3.646-9.924-8.709-11.342 0.608-1.013 1.215-2.43 1.215-3.646v-2.633c-0.203-3.646-3.241-6.684-6.886-6.684s-6.684 3.038-6.684 6.684v2.633c0 1.418 0.405 2.835 1.013 3.848-5.063 1.215-8.709 5.873-8.709 11.342 0 2.025 0.608 4.253 1.62 6.076h0.203l-0.203 0.203c2.43 1.013 5.063 1.418 7.696 1.418h9.924c2.633 0 5.266-0.405 7.696-1.418v0c0 0 0 0 0 0 0.203 0 0.203 0 0.405-0.203l-0.203-0.405zM9.722 6.684c0-2.633 2.025-4.658 4.658-4.658s4.658 2.025 4.658 4.658v2.633c0 2.633-2.025 4.658-4.658 4.658s-4.658-2.025-4.658-4.658v-2.633zM9.519 29.975c-2.228 0-4.253-0.405-6.278-1.013-0.81-1.418-1.215-2.835-1.215-4.456 0-4.861 3.646-8.911 8.506-9.722 1.013 0.81 2.43 1.418 3.848 1.418s2.835-0.608 3.848-1.418c4.861 0.608 8.304 4.861 8.304 9.722 0 1.62-0.405 3.038-1.215 4.456-2.025 0.608-4.051 1.013-6.278 1.013h-9.519z"></path>
+            </symbol>
+            <symbol id="icon-box" viewbox="0 0 41 32">
+                <path d="M41.173 8.96l-9.173-8.533-17.92-0.427-7.040 3.413-7.040 8.533 5.76 1.707v13.227l15.36 5.12 14.293-6.827v-13.013l5.76-3.2zM27.52 14.293l-4.267-6.187 8.107-5.333 6.187 5.76-10.027 5.76zM14.507 2.133l13.44 0.213-5.973 3.84-0.427-0.64-0.427 1.067-10.453-2.56 3.84-1.92zM7.893 5.547l11.947 2.773v0.427l-2.987 5.973-13.227-3.84 4.267-5.333zM7.893 14.293l10.027 2.987 2.133-3.84v16l-12.16-3.84v-11.307zM33.28 23.893l-11.307 5.333v-19.2l4.907 7.040 6.4-3.627v10.453z"></path>
+            </symbol>
+            <symbol id="icon-statistics" viewbox="0 0 46 32">
+                <path d="M0 22.99h3.107v9.010h-3.107v-9.010z"></path>
+                <path d="M14.291 17.087h3.107v14.913h-3.107v-14.913z"></path>
+                <path d="M27.34 0h3.107v32h-3.107v-32z"></path>
+                <path d="M42.563 9.942h3.107v22.369h-3.107v-22.369z"></path>
+            </symbol>
+            <symbol id="icon-wave" viewbox="0 0 53 32">
+                <path d="M50.824 13.553c-13.176-13.176-35.012-13.176-48.188 0l-2.635-2.635c14.682-14.682 38.776-14.682 53.459 0l-2.635 2.635z"></path>
+                <path d="M42.165 22.212c-8.659-8.659-22.588-8.659-31.247 0l-2.635-2.635c10.165-10.165 26.353-10.165 36.518 0l-2.635 2.635z"></path>
+                <path d="M32.753 32c-1.506-1.506-3.765-2.259-6.024-2.259v0c-2.259-0.376-4.141 0.753-6.024 2.259l-2.635-2.635c2.259-2.259 5.271-3.388 8.659-3.388 0 0 0 0 0 0 3.388 0 6.4 1.129 8.659 3.388l-2.635 2.635z"></path>
+            </symbol>
+            <symbol id="icon-network" viewbox="0 0 45 32">
+                <path d="M38.531 2.612c-3.592 0-6.531 2.939-6.531 6.531 0 1.306 0.327 2.286 0.98 3.265l-7.184 5.878c-1.306-0.98-2.612-1.306-4.571-1.306-1.306 0-2.286 0.327-3.592 0.98l-4.898-6.204c0.98-1.306 1.633-2.939 1.633-4.571 0-3.918-3.265-7.184-7.184-7.184s-7.184 3.265-7.184 7.184 3.265 7.184 7.184 7.184c0.98 0 1.959-0.327 2.939-0.653l5.224 6.204c-0.98 1.306-1.306 2.612-1.306 4.571 0 4.245 3.265 7.51 7.51 7.51s7.51-3.265 7.51-7.51c0-1.306-0.327-2.286-0.98-3.592l7.51-6.204c0.98 0.653 1.959 0.98 3.265 0.98 3.592 0 6.531-2.939 6.531-6.531s-3.265-6.531-6.857-6.531zM3.265 7.184c0-2.286 1.633-3.918 3.918-3.918s3.918 1.633 3.918 3.918-1.633 3.918-3.918 3.918-3.918-1.633-3.918-3.918zM21.224 28.735c-2.286 0-4.245-1.959-4.245-4.245s1.959-4.245 4.245-4.245c2.286 0 4.245 1.959 4.245 4.245s-1.633 4.245-4.245 4.245zM38.531 12.408c-1.959 0-3.265-1.306-3.265-3.265s1.306-3.265 3.265-3.265 3.265 1.306 3.265 3.265-1.306 3.265-3.265 3.265z"></path>
+            </symbol>
+            <symbol id="icon-more" viewbox="0 0 124 32">
+                <path d="M16.39 32c-9.366 0-16.39-7.024-16.39-15.61s7.024-16.39 16.39-16.39 16.39 7.024 16.39 16.39-7.805 15.61-16.39 15.61zM16.39 7.805c-4.683 0-8.585 3.902-8.585 8.585s3.902 8.585 8.585 8.585 8.585-3.902 8.585-8.585-4.683-8.585-8.585-8.585z"></path>
+                <path d="M62.439 32c-8.585 0-16.39-7.024-16.39-16.39s7.024-15.61 16.39-15.61 15.61 7.024 15.61 16.39-7.024 15.61-15.61 15.61zM62.439 7.805c-4.683 0-8.585 3.902-8.585 8.585s3.902 7.805 8.585 7.805 7.805-3.902 7.805-7.805-3.902-8.585-7.805-8.585z"></path>
+                <path d="M108.488 32c-8.585 0-16.39-7.024-16.39-16.39s7.024-15.61 16.39-15.61 16.39 7.024 16.39 16.39-7.805 15.61-16.39 15.61zM108.488 7.805c-4.683 0-8.585 3.902-8.585 8.585s3.902 8.585 8.585 8.585 8.585-3.902 8.585-8.585-4.683-8.585-8.585-8.585z"></path>
+            </symbol>
+            <symbol id="icon-arrow-right" viewbox="0 0 32 32">
+                <path d="M19.414 27.414l10-10c0.781-0.781 0.781-2.047 0-2.828l-10-10c-0.781-0.781-2.047-0.781-2.828 0s-0.781 2.047 0 2.828l6.586 6.586h-19.172c-1.105 0-2 0.895-2 2s0.895 2 2 2h19.172l-6.586 6.586c-0.39 0.39-0.586 0.902-0.586 1.414s0.195 1.024 0.586 1.414c0.781 0.781 2.047 0.781 2.828 0z"></path>
+            </symbol>
+            <symbol id="icon-twitter" viewbox="0 0 32 32">
+                <path d="M32 7.075c-1.175 0.525-2.444 0.875-3.769 1.031 1.356-0.813 2.394-2.1 2.887-3.631-1.269 0.75-2.675 1.3-4.169 1.594-1.2-1.275-2.906-2.069-4.794-2.069-3.625 0-6.563 2.938-6.563 6.563 0 0.512 0.056 1.012 0.169 1.494-5.456-0.275-10.294-2.888-13.531-6.862-0.563 0.969-0.887 2.1-0.887 3.3 0 2.275 1.156 4.287 2.919 5.463-1.075-0.031-2.087-0.331-2.975-0.819 0 0.025 0 0.056 0 0.081 0 3.181 2.263 5.838 5.269 6.437-0.55 0.15-1.131 0.231-1.731 0.231-0.425 0-0.831-0.044-1.237-0.119 0.838 2.606 3.263 4.506 6.131 4.563-2.25 1.762-5.075 2.813-8.156 2.813-0.531 0-1.050-0.031-1.569-0.094 2.913 1.869 6.362 2.95 10.069 2.95 12.075 0 18.681-10.006 18.681-18.681 0-0.287-0.006-0.569-0.019-0.85 1.281-0.919 2.394-2.075 3.275-3.394z"></path>
+            </symbol>
+        </defs>
+    </svg>
+    <!--/header-->
+    <header>
+        <div class="logo">
+            <svg class="icon icon-logo">
+                <use xlink:href="#icon-logo"></use>
+            </svg>
+        </div>
+        <div class="search">
+            <form action="">
+                <input type="text" placeholder="Search">
+                <select>
+                    <option>Select Entity</option>
+                    <option value="1">some option</option>
+                    <option value="1">some option</option>
+                    <option value="1">some option</option>
+                </select>
+                <button>
+                    <svg class="icon icon-magnifier">
+                        <use xlink:href="#icon-magnifier"></use>
+                    </svg>
+                </button>
+            </form>
+        </div>
+        <div class="informer">
+            <button class="message">
+                <svg class="icon icon-message">
+                    <use xlink:href="#icon-message"></use>
+                </svg>
+            </button>
+            <button class="account">
+                <svg class="icon icon-account">
+                    <use xlink:href="#icon-account"></use>
+                </svg>
+            </button>
+            <button class="notify">
+                <svg class="icon icon-notification">
+                    <use xlink:href="#icon-notification"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="profile">
+            <div class="profile-data-wrapper">
+                <span class="profile-name">
+                    HOANG NGUYEN
+                </span>
+                <span class="profile-sub-data">
+                    My Public Relations Data Group
+                </span>
+            </div>
+            <div class="profile-pic" style="background-image: url('./assets/img/avatar.jpg')">
+                <div class="profile-status">
+                    <svg class="icon icon-checkmark">
+                        <use xlink:href="#icon-checkmark"></use>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="navigation">
+            <a href="javascript:void(0)">
+                <svg class="icon icon-home">
+                    <use xlink:href="#icon-home"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-star">
+                    <use xlink:href="#icon-star"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-doc">
+                    <use xlink:href="#icon-doc"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-prof">
+                    <use xlink:href="#icon-prof"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-box">
+                    <use xlink:href="#icon-box"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-statistics">
+                    <use xlink:href="#icon-statistics"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-wave">
+                    <use xlink:href="#icon-wave"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-network">
+                    <use xlink:href="#icon-network"></use>
+                </svg>
+            </a>
+            <a href="javascript:void(0)">
+                <svg class="icon icon-more">
+                    <use xlink:href="#icon-more"></use>
+                </svg>
+            </a>
+        </div>
+    </nav>
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 p0">
+                    <div class="nav-btn-wrapper">
+                        <button>
+                            <svg class="icon icon-arrow-left">
+                                <use xlink:href="#icon-arrow-left"></use>
+                            </svg>
+                            <span>
+                                Back to Search
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-header">YOUR LIST</div>
+                    <div class="list-content">
+                        <a href="javascript:void(0)">
+                            <div style="background-image: url('./assets/img/icon-marketing.png')">
+                            </div>
+                            <span>My Content Marketing Influencers</span>
+                        </a>
+                        <a href="javascript:void(0)">
+                            <div style="background-image: url('./assets/img/icon-marketing.png')">
+                            </div>
+                            <span>Top Publisher</span>
+                        </a>
+                        <a href="javascript:void(0)">
+                            <div style="background-image: url('./assets/img/icon-marketing.png')">
+                            </div>
+                            <span>2014 Product Launch</span>
+                        </a>
+                        <a href="javascript:void(0)">
+                            <div style="background-image: url('./assets/img/icon-marketing.png')">
+                            </div>
+                            <span>Fashion Bloggers</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart block">
+                        <span class="block-header">
+                            OUTEACH TREND
+                        </span>
+                        <div class="chart-box">
+                            <canvas id="line-chart" width="100" height="30"></canvas>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="history mini-block">
+                                <span class="block-header">
+                                    HISTORY
+                                </span>
+                                <span class="history-date">
+                                    Today
+                                </span>
+                                <div class="history-item">
+                                    <p class="his-top-data">
+                                        <span>You</span> send them an email
+                                    </p>
+                                    <div class="user-wrapper">
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <button class="user-more">+10</button>
+                                    </div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="user-wrapper">
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <p class="his-side-data">
+                                            <span>Minh Pham</span> opened it
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="history-item">
+                                    <p class="his-top-data">
+                                        They clicked
+                                        <span>this link</span> in that email
+                                    </p>
+                                    <div class="user-wrapper">
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                    </div>
+                                </div>
+                                <div class="history-item">
+                                    <p class="his-top-data">
+                                        They visited this spesific page on your website
+                                    </p>
+                                    <div class="user-wrapper">
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                    </div>
+                                </div>
+                                <div class="history-item">
+                                    <div class="user-wrapper">
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <p class="his-side-data">
+                                            <span>You</span> followed
+                                            <span>Minh Phan</span> on Twitter
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="history-item">
+                                    <p class="his-top-data">
+                                        They followed
+                                        <span>You</span>
+                                    </p>
+                                    <div class="user-wrapper">
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <div class="user" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                        <button class="user-more">+10</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="cloud mini-block">
+                                    <span class="block-header">
+                                        WORLD CLOUD
+                                    </span>
+                                    <div class="bubble-wrapper">
+                                        <img src="./assets/img/bubble-02.png">
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="geographic mini-block">
+                                <span class="block-header">
+                                    GEOGRAPHIC
+                                </span>
+                                <div class="map-wrapper">
+                                    <img src="./assets/svg/usa_map-01.svg">
+                                </div>
+                                <ul>
+                                    <li>
+                                        <span></span> 50% LOS ANGELES</li>
+                                    <li>
+                                        <span></span> 30% CHICAGO</li>
+                                    <li>
+                                        <span></span> 20% NEW YORK</li>
+                                </ul>
+                            </div>
+                            <div class="subject mini-block">
+                                    <span class="block-header">
+                                        SUBJECTS
+                                    </span>
+                                    <div class="subject-wrapper">
+                                        <div class="subject-item">
+                                            <span class="sub-name">Product Design</span>
+                                            <span class="sub-count">1280</span>
+                                        </div>
+                                        <div class="subject-item">
+                                            <span class="sub-name">Beauty</span>
+                                            <span class="sub-count">888</span>
+                                        </div>
+                                        <div class="subject-item">
+                                            <span class="sub-name">Food</span>
+                                            <span class="sub-count">262</span>
+                                        </div>
+                                        <div class="subject-item">
+                                            <span class="sub-name">Domestic Lifestyle</span>
+                                            <span class="sub-count">960</span>
+                                        </div>
+                                        <div class="subject-item">
+                                            <span class="sub-name">Entertainment</span>
+                                            <span class="sub-count">356</span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="top-inf">
+                        <span class="block-header">
+                            TOP INFLUENCERS
+                        </span>
+                        <div class="influencer" style="padding-top: 0">
+                            <div class="inf-avatar" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                            <div class="inf-data-wrapper">
+                                <span class="inf-name">Loc Ngo</span>
+                                <span class="inf-progress-bar">
+                                    <span style="width: 75%"></span>
+                                </span>
+                            </div>
+                            <button>
+                                <svg class="icon icon-arrow-right">
+                                    <use xlink:href="#icon-arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="influencer">
+                            <div class="inf-avatar" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                            <div class="inf-data-wrapper">
+                                <span class="inf-name">Minh Bham</span>
+                                <span class="inf-progress-bar">
+                                    <span style="width: 60%"></span>
+                                </span>
+                            </div>
+                            <button>
+                                <svg class="icon icon-arrow-right">
+                                    <use xlink:href="#icon-arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="influencer">
+                            <div class="inf-avatar" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                            <div class="inf-data-wrapper">
+                                <span class="inf-name">Hoang Nguyen</span>
+                                <span class="inf-progress-bar">
+                                    <span style="width: 60%"></span>
+                                </span>
+                            </div>
+                            <button>
+                                <svg class="icon icon-arrow-right">
+                                    <use xlink:href="#icon-arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="influencer">
+                            <div class="inf-avatar" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                            <div class="inf-data-wrapper">
+                                <span class="inf-name">Chris Rice</span>
+                                <span class="inf-progress-bar">
+                                    <span style="width: 50%"></span>
+                                </span>
+                            </div>
+                            <button>
+                                <svg class="icon icon-arrow-right">
+                                    <use xlink:href="#icon-arrow-right"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <button class="show-more-inf-btn">SHOW MORE</button>
+                    </div>
+                    <div class="activity">
+                        <span class="block-header">
+                            RECENT ACTIVITIES
+                        </span>
+                        <div class="actv">
+                            <div class="actv-user">
+                                <div class="actv-user-avatar" style="background-image: url('./assets/img/inf-avatar.png')">
+                                    <span>
+                                        <svg class="icon icon-twitter">
+                                            <use xlink:href="#icon-twitter"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="actv-user-info">
+                                    <span class="actv-type">
+                                        <span>Danise Romero</span> retweet
+                                        <span>Danny Jhon</span>'s tweet</span>
+                                    <div class="actv-date">7/28/2015 at 7:47 AM</div>
+                                </div>
+                            </div>
+                            <p>Places you can see me tonight: Anderson Cooper 360, CNN Tonight
+                                <a href="javascript:void(0)">https://t.co/jf8Qs3D9vG</a>
+                            </p>
+                        </div>
+                        <div class="actv">
+                            <div class="actv-user">
+                                <div class="actv-user-avatar" style="background-image: url('./assets/img/inf-avatar.png')">
+                                    <span>
+                                        <svg class="icon icon-twitter">
+                                            <use xlink:href="#icon-twitter"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="actv-user-info">
+                                    <span class="actv-type">
+                                        <span>Danise Romero</span> retweet
+                                        <span>Danny Jhon</span>'s tweet</span>
+                                    <div class="actv-date">7/28/2015 at 7:47 AM</div>
+                                </div>
+                            </div>
+                            <p>Places you can see me tonight: Anderson Cooper 360, CNN Tonight
+                                <a href="javascript:void(0)">https://t.co/jf8Qs3D9vG</a>
+                            </p>
+                            <img src="./assets/img/bird.png">
+                            <div class="actv-sub-info">
+                                <div class="acvt-sub-avatar" style="background-image: url('./assets/img/inf-avatar.png')"></div>
+                                <span>
+                                    <span>Jame Dane</span> this is interesting</span>
+                            </div>
+                        </div>
+                        <div class="actv">
+                            <div class="actv-user">
+                                <div class="actv-user-avatar" style="background-image: url('./assets/img/inf-avatar.png')">
+                                    <span>
+                                        <svg class="icon icon-twitter">
+                                            <use xlink:href="#icon-twitter"></use>
+                                        </svg>
+                                    </span>
+                                </div>
+                                <div class="actv-user-info">
+                                    <span class="actv-type">
+                                        <span>Danise Romero</span> retweet
+                                        <span>Danny Jhon</span>'s tweet</span>
+                                    <div class="actv-date">7/28/2015 at 7:47 AM</div>
+                                </div>
+                            </div>
+                            <p>I LOVE @Pharrell powerful FREEDOM video. To be free is to live without anything holding you back!
+                                <a href="javascript:void(0)">https://t.co/jf8Qs3D9vG</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!--script-->
+    <script src="./assets/js/jquery-3.3.1.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/Chart.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script>
+        //Global Options
+        let mychart = document.getElementById('line-chart').getContext('2d');
+
+        //Global Options
+        Chart.defaults.global.defaultFontFamily = 'montserrat';
+        Chart.defaults.global.defaultFontColor = '#9298a4';
+
+        let lineChart = new Chart(mychart, {
+            type: 'line', //type of chart
+            data: {
+                labels: ['0', 'Jul 1', 'Jul 2', 'Jul 3', 'Jul 4', 'Jul 5', 'Jul 6', 'Jul 7'],
+                datasets: [{
+                    data: [
+                        0,
+                        50,
+                        25,
+                        100,
+                        75,
+                        150,
+                        75,
+                        100
+                    ],
+                    backgroundColor: 'transparent',
+                    borderColor: '#5ac14c',
+                    pointBackgroundColor: '#fff',
+                    pointBorderColor: '#5ac14c',
+                    pointBorderWidth: 2,
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        gridLines: {
+                            display: false
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            min: 0,
+                            max: 150,
+                            stepSize: 50
+                        }
+                    }],
+                },
+                legend: {
+                    display: false
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

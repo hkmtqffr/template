@@ -1,0 +1,211 @@
+.p0 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+header {
+    position: fixed;
+    top:0;
+    left: 0;
+    z-index: 9999;
+    height: 70px;
+    width: 100%;
+    border-bottom: 2px solid $border;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0px -11px 28px 0px rgba(146, 152, 164, 1);
+    background-color: $white;
+    .logo {
+        width: 70px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-right: 2px solid $border;
+        svg {
+            fill: $bluemid;
+            stroke: $bluemid;
+            height: 1em;
+            width: 1em;
+            font-size: 23px;
+        }
+    }
+    .search {
+        height: 100%;
+        padding-left: 30px;
+        display: flex;
+        align-items: center;
+        form {
+            display: flex;
+            align-items: center;
+            position: relative;
+            input {
+                &::placeholder {
+                    color: $greydark;
+                }
+                font-weight: 500;
+                color: $greydark;
+                height: 40px;
+                width: 356px;
+                border: 2px solid $border;
+                background-color: $greysoft;
+                border-radius: 25px 0 0 25px;
+                padding: 16px 144px 16px 26px;
+                &:focus {
+                    border: 2px solid $border;
+                }
+            }
+            button {
+                height: 40px;
+                width: 45px;
+                background-color: $greysoft;
+                border: 2px solid $border;
+                border-radius: 0 25px 25px 0;
+                margin-left: -6px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                svg {
+                    height: 1em;
+                    width: 1em;
+                    font-size: 19px;
+                    fill: $greydark;
+                    stroke: $greydark;
+                }
+            }
+            select{
+                position: absolute;
+                top: 50%;
+                right: 65px;
+                transform: translateY(-50%);
+                border:0;
+                background:none;
+                color: $greydark;
+                outline: none;
+                font-weight: 500;
+            }
+        }
+    }
+    .informer {
+        width: 248px;
+        height: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        border-left: 2px solid $border;
+        border-right: 2px solid $border;
+        margin-left: auto;
+        button {
+            background-color: transparent;
+            width: 27px;
+            height: 27px;
+            svg {
+                height: 1em;
+                width: 1em;
+                font-size: 24px;
+            }
+            .icon-message {
+                fill: $bluedark;
+                stroke: $bluedark;
+            }
+            .icon-account {
+                fill: $bluemid;
+                stroke: $bluemid;
+            }
+            .icon-notification {
+                fill: $green;
+                stroke: $green;
+            }
+        }
+    }
+    .profile {
+        width: 400px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        .profile-data-wrapper {
+            display: flex;
+            flex-direction: column;
+            span {
+                margin-left: auto;
+            }
+            .profile-name {
+                font-weight: 600;
+                color: $greydark;
+            }
+            .profile-sub-data {
+                font-weight: 500;
+                color: $greymid;
+            }
+        }
+        .profile-pic {
+            margin-left: 22px;
+            position: relative;
+            padding: 20px;
+            width: 48px;
+            height: 48px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            border-radius: 50%;
+            .profile-status {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                background-color: $green;
+                border-radius: 50%;
+                width: 18px;
+                height: 18px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                svg {
+                    height: 1em;
+                    width: 1em;
+                    font-size: 8px;
+                    fill: $white;
+                    stroke: $white;
+                }
+            }
+        }
+    }
+}
+
+nav {
+    width: 70px;
+    height: 100%;
+    border-right: 2px solid $border;
+    position: fixed;
+    top: 70px;
+    background-color: $white;
+    .navigation {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 20px;
+        a {
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            margin-top: 6px;
+            margin-bottom: 6px;
+            border-left: 3px solid transparent;
+            transition: .1s ease-in;
+            svg {
+                height: 1em;
+                width: 1em;
+                font-size: 23px;
+                fill: $greyspec;
+                stroke: $greyspec;
+            }
+            &:hover {
+                border-left: 3px solid $green;
+                svg{
+                    fill: $green;
+                    stroke: $green;
+                }
+            }
+        }
+    }
+}
