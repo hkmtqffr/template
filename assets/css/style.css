@@ -1058,3 +1058,6 @@ main {
     font-weight: 500;
     color: #9298a4;
     font-size: 15px; }
+
+#cloud text {
+  background-color: red; }
